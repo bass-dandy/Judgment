@@ -106,7 +106,7 @@ public class Rock
 		v2norm_end += 2 * m1 * v1norm_start;
 		v2norm_end /= (m1 + m2);
 		
-		// normal and tangent by result, add to unit normal and tangent
+		// scale unit normal by normal component, add to unit tangent scaled by the tangent component
 		v1final = unitNorm.cpy().scl(v1norm_end);
 		v1final = v1final.add(unitTan.cpy().scl(v1tan));
 		

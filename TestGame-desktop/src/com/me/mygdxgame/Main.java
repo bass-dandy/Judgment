@@ -13,7 +13,7 @@ public class Main {
 		cfg.useGL20 = false;
 		cfg.width = 600;
 		cfg.height = 600;
-		cfg.resizable = false; 
+		//cfg.resizable = false; 
 		cfg.addIcon("icon.png", Files.FileType.Internal);
 		
 		new LwjglApplication(new TestGame(), cfg);

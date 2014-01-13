@@ -151,22 +151,20 @@ public class GameScreen implements Screen {
 				r.dispose();
 				it.remove();
 			}
-			// check collision between rocks and... rocks
-			for(Rock r2: rocks) {
-				for(Rock r3: rocks) {
-					if(!r2.equals(r3) && Intersector.overlaps(r2.bounds, r3.bounds) && ! r3.collided) {
-						r2.collide(r3);
-						r2.collided = true;
+			else {
+				// check collision between rocks and... rocks
+				for(Rock r2: rocks) {
+					for(Rock r3: rocks) {
+						if(!r2.equals(r3) && Intersector.overlaps(r2.bounds, r3.bounds) && ! r3.collided) {
+							r2.collide(r3);
+							r2.collided = true;
+						}
 					}
 				}
 			}	
 		}
-		// reset for next collision check
-		for(Rock rock: rocks)
-		{
-			if(rock.collided)
-				rock.collided = false;
-		}
+		// reset rocks for next collision check
+		for(Rock rock: rocks) { rock.collided = false; }
 	}
 
 	private void doBulletCollisions()
